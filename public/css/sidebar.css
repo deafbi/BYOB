@@ -1,0 +1,97 @@
+:root {
+    --primary-clr: #7522e6;
+  --bg-clr: #1e1e1e;
+  --white-bg: #242422;
+  --dark-text-clr: #fff;
+  --light-text-clr: #fff;
+  --hover-clr: #31313f;
+  }
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
+  }
+  .container {
+    width: 85px;
+    min-height: 100vh;
+    padding: 20px;
+    overflow: hidden;
+    border-radius: 10px;
+    background-color: var(--white-bg);
+    transition: all 0.3s ease;
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between; /* Ensure items are spaced evenly vertically */
+}
+  .container.active {
+    width: 250px;
+  }
+  .container .logo {
+    width: 100%;
+    margin-bottom: 30px;
+    display: flex;
+    align-items: center;
+    width: 100%;
+    border-radius: 10px;
+    text-decoration: none;
+    font-size: 16px;
+    white-space: nowrap;
+    text-transform: capitalize;
+    color: var(--dark-text-clr);
+  }
+  .container .logo span {
+    transition: transform 0.5s;
+    transform: translateX(100px);
+  }
+  .container ul {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    flex-grow: 1; /* Allow the list to grow to fill available space */
+}
+.link-item:last-child {
+    margin-top: auto; /* Push the last item to the bottom */
+}
+.link-item a {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    padding: 10px;
+    border-radius: 10px;
+    text-decoration: none;
+    font-size: 16px;
+    white-space: nowrap;
+    text-transform: capitalize;
+    color: var(--dark-text-clr);
+}
+  .link-item a span {
+    transition: transform 0.5s;
+    transform: translateX(100px);
+  }
+  .link-item:last-child span h4 {
+    line-height: 1;
+  }
+  .link-item:last-child span p {
+    font-size: 12px;
+  }
+  .container.active .link-item a span {
+    transition-delay: calc(0.02s * var(--i));
+    transform: translateX(0px);
+  }
+  .link-item a:hover {
+    background-color: var(--hover-clr);
+}
+  .link-item.active a {
+    color: var(--light-text-clr);
+    background-color: var(--primary-clr);
+  }
+  .link-item ion-icon {
+    min-width: 20px;
+    min-height: 20px;
+    margin-right: 20px;
+    position: relative;
+  }
